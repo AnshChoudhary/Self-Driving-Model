@@ -34,7 +34,7 @@ The project aims to perform lane detection on a driving simulator by capturing t
 ## Usage
 1. Run the Application:
 ```bash
-python lane_detection_steering.py
+python simulator.py
 ```
 
 2. Switch to Game Window:
