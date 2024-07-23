@@ -2,6 +2,61 @@
 
 ![Self Driving GIF](https://github.com/AnshChoudhary/Self-Driving-Model/blob/main/self-driving-curve-trim.gif)
 
+# Lane Detection and Vehicle Steering using UNet and Bird's Eye View Transformation
+
+This project demonstrates a lane detection and vehicle steering application using a UNet deep learning model. The application captures the game screen, applies a bird's eye view perspective transformation, and utilizes lane detection to steer the vehicle in a simulated environment.
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Usage](#usage)
+- [How it Works](#how-it-works)
+  - [Screen Capture](#screen-capture)
+  - [Bird's Eye View Transformation](#birds-eye-view-transformation)
+  - [Lane Detection](#lane-detection)
+  - [Steering Mechanism](#steering-mechanism)
+  - [Debugging and Visualization](#debugging-and-visualization)
+- [Dependencies](#dependencies)
+- [Demo](#demo)
+
+## Introduction
+
+The project aims to perform lane detection on a driving simulator by capturing the screen and applying a UNet model for semantic segmentation. By transforming the captured screen into a bird's eye view, we improve lane detection accuracy, which helps in robust vehicle steering.
+
+## Features
+
+- **Bird's Eye View Transformation**: Converts the captured frame into a bird's eye view for better lane detection.
+- **Lane Detection**: Uses a UNet model for detecting lanes in the game.
+- **Vehicle Steering**: Automatically steers the vehicle based on detected lane information.
+- **Debugging Information**: Displays real-time lane detection and steering actions on the screen.
+- **Performance Logging**: Logs key press counts and steering history for debugging and analysis.
+
+## Usage
+1. Run the Application:
+```bash
+python lane_detection_steering.py
+```
+
+2. Switch to Game Window:
+After running the script, switch to the game window within 3 seconds.
+
+3. Stop the Application:
+Press q in the application window to stop the program.
+
+## How it Works
+
+### Screen Capture
+The application uses the mss library to capture the game screen. The captured frame is then processed for lane detection. The screen dimensions are set to 1440x900, which is defined in the capture_screen() function.
+
+### Bird's Eye View Transformation
+The perspective transformation is applied to get a bird's eye view, making lane detection easier and more accurate. This is achieved using OpenCV's cv2.getPerspectiveTransform() and cv2.warpPerspective() functions. The source points (src_points) and destination points (dst_points) define the region of interest for transformation.
+
+### Lane Detection
+A UNet model is used to detect lanes in the transformed image. The model processes the frame to output a mask indicating lane positions, which is then used for steering decisions.
+
+### Steering Mechanism
+The application calculates the center of the detected lane and compares it to the center of the screen. Based on this difference, the vehicle is steered using pyautogui to simulate key presses. The steering logic smoothens the transition using a weighted average of the current and previous steering values, making it more realistic.
+
 ### PID Controller
 
 The basic idea behind a PID controller is to read a sensor, then compute the desired actuator output by calculating proportional, integral, and derivative responses and summing those three components to compute the output.
@@ -54,3 +109,26 @@ elif u < 0:
   throttle_output = 0
   brake_output    = -u
 ```
+
+### Debugging and Visualization
+Real-time debugging information is displayed, including the steering angle, direction, and lane overlay on the screen. Additionally, a history of steering values and key press counts is logged for analysis.
+
+## Dependencies
+The project requires the following libraries:
+
+Python 3.8+
+- OpenCV
+- PyTorch
+- NumPy
+- PIL (Pillow)
+- PyAutoGUI
+- MSS
+- TorchVision
+
+You can install them with:
+```bash
+pip install opencv-python-headless torch torchvision numpy Pillow pyautogui mss
+```
+
+## Demo
+![Self Driving GIF](https://github.com/AnshChoudhary/Self-Driving-Model/blob/main/self-driving-curve-trim.gif)
