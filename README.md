@@ -1,8 +1,6 @@
-# Self-Driving-Model
+# Lane Detection and Vehicle Steering using UNet and Bird's Eye View Transformation
 
 ![Self Driving GIF](https://github.com/AnshChoudhary/Self-Driving-Model/blob/main/self-driving-curve-trim.gif)
-
-# Lane Detection and Vehicle Steering using UNet and Bird's Eye View Transformation
 
 This project demonstrates a lane detection and vehicle steering application using a UNet deep learning model. The application captures the game screen, applies a bird's eye view perspective transformation, and utilizes lane detection to steer the vehicle in a simulated environment.
 
