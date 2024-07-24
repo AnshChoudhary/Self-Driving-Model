@@ -130,3 +130,12 @@ pip install opencv-python-headless torch torchvision numpy Pillow pyautogui mss
 
 ## Demo
 ![Self Driving GIF](https://github.com/AnshChoudhary/Self-Driving-Model/blob/main/self-driving-curve-trim.gif)
+
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request with your changes. For major changes, please open an issue first to discuss what you would like to change.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/YourFeature`)
+3. Commit your Changes (`git commit -m 'Add some YourFeature'`)
+4. Push to the Branch (`git push origin feature/YourFeature`)
+5. Open a Pull Request
+
