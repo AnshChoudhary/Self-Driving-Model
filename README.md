@@ -129,6 +129,7 @@ pip install opencv-python-headless torch torchvision numpy Pillow pyautogui mss
 ```
 
 ## Demo
+This autonomous driving pipeline was implemented on an online driving game [SlowRoads.io](www.https://slowroads.io)) and in the demo video displayed below, the car is being driven at a speed of 10 miles per hour and the model is able to run inference at a rate of 2.5 frames per second.
 ![Self Driving GIF](https://github.com/AnshChoudhary/Self-Driving-Model/blob/main/self-driving-curve-trim.gif)
 
 ## Contributing
